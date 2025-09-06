@@ -1,0 +1,172 @@
+TP-0 - Triberti Facundo Nicolás - Programador
+Considera un lenguaje que conozcas bien y analízalo en términos de [los cuatro
+componentes de un paradigma] mencionados por Kuhn.
+
+1. Generalización simbólica: ¿Cuáles son las reglas escritas del lenguaje?
+- Las reglas escritas del lenguaje corresponden a su sintaxis, semantica y convenciones formales, elegí C porque es el lenguaje en el que más he abordado a lo largo del tiempo, estas reglas que tiene C son:
+    1-. Sintaxis Basica:
+        -Toda instruccion termina con ;
+        -Los bloques de codigo se delimitan con {}
+        -Las funciones tienen una forma determinada que es estrictamente así:
+            int,char,void, (segun el tipo de dato que vamos a tratar, si vamos a hacer una funcion o un procedimiento) "nombre_de_funcion" (nombre seleccionado por nosotros para identificar a la funcion) (parametros) [datos a importar a la funcion]{
+                //cuerpo
+            }
+            
+            Por ejemplo un procedimiento quedaría así:
+
+            void sumadecimal (float num1, float num2){
+                return num1+num2
+            }
+    
+    2-. Tipos de datos primitivos:
+        -Enteros (int)
+        -Reales (float)
+        -Caracteres (char, string)
+    
+    3-. Reglas de declaracion y uso:
+        -Una variable debe declararse antes de usarse
+        -El tipo de dato no puede cambiarse durante la ejecucion (por eso se dice que C es un lenguaje fuertemente tipado en compilacion)
+        
+        Ejemplo:
+            -int edad = 21;
+            yo no puedo cambiar el tipo de dato que va a ser edad a partir de ahora, si quiero pasarlo a decimales como por ejemplo un numero flotante, tendría que redeclarar la funcion directamente en codigo, sería float edad = 21.5;
+        
+    4-. Estructuras de control:
+        -Estructuras de decision: if, else, switch
+        -Bucles: for, while, do-while
+
+        Ejemplo:
+            -for (int i = 0; i < 10; i++) {
+                printf("%d\n", i);
+            }
+        ahi estoy haciendo un contador que tiene como base 0, y se va a repetir el print con hasta que i sea mayor a 10, por lo que vamos a tener un contador de 0 a 9, cada vez que la regla que estipulamos (en este caso i < 10) sea verdadera el codigo imprimirá el valor de i en ese momento del bucle, cada vez que el bucle "da una vuelta" se suma 1 al valor de i. Por eso se dice en ese caso que el contador va a darle hasta 9, porque i nunca va a ser igual a 10 en ese bucle
+
+    5-. Reglas de funciones y alcance:
+        -main() es el punto de entrada a nuestro codigo, no importa que datos o funciones tengamos arriba, siempre el compilador va a buscar a main() para comenzar el codigo
+        -Soporta funciones definidas por el usuario y funciones de bibliotecas previamente cargadas mediante #include
+        -Las variables tienen alcance léxico (bloques y funciones)
+    
+    6-. Reglas de compilacion y enlace:
+        -El codigo funete debe compilarse antes de ejecutarse
+        -Requiere enlazado con librerias estandar para poder interacturar con la memoria del sistema (#include <stdio.h> (std = standard) (i = input) (o = output))
+
+2. Creencias de los profesionales: ¿Qué características particulares del lenguaje se
+cree que sean "mejores" que en otros lenguajes?
+
+    Los profesionales que trabajan con C suelen tener ciertas convicciones y valoraciones sobre las caracteriticas del lenguaje, que consideran las ventajas que tiene C más fuerte sobre otros lenguajes
+    
+    1-. Eficiencia y rendimiento crudo:
+        -Se cree que C produce programas muy rapidos y con un uso de memoria super reducido porque compila a codigo maquina casi de manera directa y permite un control sobre la memoria y procesos de cpu de manera más fina que otros lenguajes en el mercado
+        -Esto lo hace el preferido en sistemas embebidos, sistemas operativos y software de alto rendimiento 
+
+    2-. Control de hardware:
+        -Ofrece un acceso de bajo nivel a memoria (utilizando punteros y aritmetica de direcciones) y a registros, lo que percibe como una gran ventaja sobre lenguajes más abstractos
+        -Los profesionales creen que este control en la memoria es la clave para aplicaciones de uso critico
+
+    3-. Portabilidad:
+        -Aunque C es un lenguaje de bajo nivel, se considera que es muy portable, un programa escrito correctamente en C puede compilarse en distintos sistemas operativos y arquitecturas con minimas modificaciones sobre el SO 
+    
+    4-. Simplicidad del nucleo del lenguaje:
+        -Se valora que C tiene un conjunto reducido de construcciones y palabras clave, lo cual lo hace más fácil de aprender en comparacion con lenguajes con sintaxis muy extensa
+        -Esta simplicidad se considera "poderosa", con pocas herramientas se pueden expresar algoritmos complejos
+
+    5-. Lenguaje "Fundacional":
+        -Muchos profesionales creen que aprender C ayuda a comprender mejor como funcionan las computadoras y la logica que tiene la programacion estructurada, siendo tan critico con la sintaxis del codigo, ayuda a los principiantes a tener en cuenta ciertas cosas que ayudan en el futuro a tener buenas practicas de programacion
+    
+3. Valores: ¿Qué pensamiento o estilo de programación consideraron mejor los creadores?
+
+    Cuando Dennis Ritchie y Brian Kernighan diseñaron C (en los años 80 en los laboratorios de Bell de AT&T), tuvieron en mente un estilo de programacion y un conjunto de vlaores que orientaron el lenguaje:
+
+    1-. Eficiencia:
+        -El valor central fue que el lenguaje debía generar codigo muy cercano al ensamblador, para aprovehcar al maximo el hardware disponible
+        -Esto implicaba sacrificar algunas seguridades en favor de la velocidad
+
+    2-. Control epxlicito del programador:
+        -Se privilegio que el programador tuviera el control total sobre la memoria, los punteros y el flujo de ejecucion 
+    
+    3-. Minimalismo y expresividad:
+        -Se busco un lenguaje con un nucleo pequeño de construcciones pero combinables para expresar programas complejos
+        -La idea era mantener la sintaxis simple y directa, sin sobrecargar la sintaxis con demasiadas abstracciones
+
+    4-. Portabilidad de los programas y del propio lenguaje:
+        -A diferencia del ensamblador, C fue diseñado para poder usarse en diferentes maquinas sin reescribirlo completamente 
+        -Fue crucial para reescribir el sistema operativo Unix en C para poder migrarlo a distintas plataformas
+
+    5-. Pragmatico por sobre formalismo matematico:
+        -Los creadores privilegiaron la utilidad practica frente una formalizacion rigurosa
+        -C no nacio para enseñar la teoria de lenguajes, sino para poder construcir softweare real de sistemas 
+
+4. Ejemplares: ¿Qué clase de problemas pueden resolverse más fácilmente en el lenguaje?    
+
+    C es un lenguaje que se diseñó pensando en resolver problemas de sistemas y bajo nivel, y allí es donde más brilla
+
+    1-. Sistemas operativos:
+        -El ejemplo clásico es Unix, reescrito en C en los años 70
+        -C facilita manejar directamente memoria, procesos y dispositivos, algo impensable en lenguajes más abstractos de esa época
+
+    2-. Drivers y controladores de hardware:
+        -Gracias a los punteros y el acceso a direcciones de memoria, C permite interactuar con registros de dispositivos
+        -Ejemplo: escribir el driver de una placa de red o de una tarjeta gráfica
+
+    3-. Programación de sistemas embebidos:
+        -Muy usado en microcontroladores, firmware y dispositivos IoT porque genera ejecutables rápidos y compactos, que aprovechan recursos limitados
+
+    4-. Compiladores e intérpretes:
+        -Muchos compiladores (incluyendo el de C mismo y GCC en sus primeras versiones) fueron escritos en C
+        -Su capacidad para manipular estructuras de datos complejas lo hace adecuado para este tipo de programas
+
+    5-. Bibliotecas de propósito general:
+        -Muchas librerías gráficas, de redes, matemáticas o criptográficas están escritas en C por rendimiento y compatibilidad
+
+    6-. Simulaciones y aplicaciones científicas de alto rendimiento:
+        -Aunque hoy en día se usan mucho Fortran o C++, C sigue siendo base para aplicaciones que requieren eficiencia numérica y control sobre la memoria
+
+# Ejercicio 2
+
+Considera un lenguaje que conozcas bien y analízalo en términos de los ejes propuestos para la elección de un lenguaje de programación [¿Cómo elegir un lenguaje?] y responde:
+
+1. ¿Tiene una sintaxis y una semántica bien definida? ¿Existe documentación oficial?
+    -Si, C tiene una sintaxis y reglas bien definidas de como declarar variables, funciones, estructuras de control, etc
+    -Como documentacion oficial tenemos el estandar ISO/IEC 9899 (última versión: 2018) y en el libro clásico The C Programming Language de Kernighan & Ritchie
+
+2. ¿Es posible comprobar el código producido en ese lenguaje?
+    -Si, en C podemos comprobar el codigo de numerosas formas, pero C deja mucha responsabilidad al programador, errores de punteros por ejemplo no los detecta ninguna de estas herramientas:
+        -Compilacion: el compilador detecta errores de sintaxis
+        -Ejecucion: se pueden comprobar los programas para verificar su comportamiento
+        -Depuracion: con herramientas como gdb se revisa paso a paso el codigo
+        -Pruebas unitarias: frameworks como Check permiten validar funciones especificas
+
+3. ¿Es confiable?
+    -Depende del contexto y del cuidado del progrmador:
+        -Es confiable cuando el codigo esta bien escrito, probado y se usan buenas practicas de programacion
+        -No es tan confiable cuando alguna de las buenas practicas que uno tiene que tener como profesional no se llevan a cabo de forma existosa, como fugas de memoria, desbordamientos de buffer, punteros nulos, etc.
+
+4. ¿Es ortogonal?
+    -En terminos de lenguaje de programacion:
+        -No completamente, porque la ortogonalidad significa que las construcciones del lenguaje se combinan libremente sin restricciones inesperadas, en C muchas combinaciones funcionan pero hay restricciones como ciertos tipos no se pueden mezclar directamente sin conversion, y hay reglas especificas para punteros, arrays y funciones
+        C es parcialmente ortogonal, pero no al 100%
+
+5. ¿Cuáles son sus características de consistencia y uniformidad?
+    -En C se puede resumir sus caracteristicas de consistencia y uniformidad:
+        -Consistencia:
+            -Las reglas del lenguaje se aplican de forma predecible, la sintaxis y semantica siguen un patron claro
+            -Las funciones y estructuras tienen comportamiento uniforme segun su definicion
+        -Uniformidad:
+            -Conceptos como tipos de datos, operadores y control de flujo se usan de manera similar en todo el lenguaje
+            -Hay excepciones que rompen un poco la uniformidad
+
+6. ¿Es extensible? ¿Hay subconjuntos de ese lenguaje?
+    -C es extensible y permite adaptaciones, y se pueden definir subconjuntos segun la necesidad del proyecto
+        -Extensible:
+            -Se puede ampliar con librerías externas (math.h, stdlib.h, pthread.h, etc) para agregar funcionalidades sin modificar el nucleo del lenguaje
+            -Tambien se pueden crear macros y funciones genericas para construir nuevas abstracciones
+        -Subconjuntos:
+            -Los subconjuntos "reducidos" de C para sistemas embebidos o microcontroladores que limitan ciertas caracteristicas del lenguaje para mayor seguridad o eficiencia
+
+7. El código producido, ¿es transportable?
+    -Normalmente los codigos de C son transportables entre plataformas y arquitecturas
+        -Portabilidad: 
+            -Los programas en C pueden compilarse en diferentes sistemas operativos y arquitecturas si se evita depender de caracteristicas especificas del compilador o del hardware
+        -Limitaciones:
+            -Tenemos limitaciones como llamadas al sistema, manejo de memoria o dependencias de librerias que no esten cargadas en el sistema, pueden afectar la portabilidad
+    -La portabilidad de C es casi estandar para cualquier sistema operativo, por lo que si se evita instrucciones particulares al sistema operativo que tiene el programador, se puede tener codigo casi plug and play
