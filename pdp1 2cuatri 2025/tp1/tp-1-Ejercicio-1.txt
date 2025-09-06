@@ -1,0 +1,92 @@
+Considera el lenguaje JavaScript acotado al paradigma de programación estructurada y analízalo en términos de los cuatro componentes de un paradigma mencionados por Kuhn. 
+
+1. Generalización simbólica: ¿Cuáles son las reglas escritas del lenguaje?
+    La Generalización simbólica de JavaScript estructurado son todas las reglas sintacticas y semanticas que permiten escribir programas con variables, operadores, funciones y controles de flujo, siguiendo un estilo impertaivo y secuencial
+
+    1-. Sintaxis Basica:
+        -Las instrucciones normalmente terminan en ;, pero es opcional en muchos casos
+        -Los bloques se delimitan con { }
+        -Las estructuras de control son if, else, switch, for, while, do-while
+            Ejemplo:
+                for (let i = 0 ; i < 10; i++){
+                    console.log(i);
+                }
+                Imprimirá en pantalla el valor de i a medida que va pasando el bucle, mostrara de 0 a 9 
+
+    2-. Declaracion de variables:
+        -En JS se usa var, let y const
+        -let y const tienen alcance de bloque, mientras que var tiene alcance de funcion, actualmente el declarar con VAR se considera una practica de programacion antigua ya que directamente se usa el Let para numeros enteros y el const para numeros con decimales 
+            Ejemplo:
+                let edad = 20;
+                const PI = 3.1416
+
+    3-. Tipos de datos básicos: 
+        -Numeros (Number)
+        -Cadenas (string)
+        -Booleanos (Boolean)
+        -Nulo (NULL)
+        -Indefinido (undefined)
+
+    4-. Funciones como unidad de estructura:
+        -Se definen funciones para encapsular bloques de codigo
+            Ejemplo:
+                function sumar(num1, num2){
+                    return num1 + num2;
+                }
+
+    5-. Operadores y expresiones:
+        -Aritmeticos: +, -, *, /, %
+        -Comparacion: ==, ===, <, >
+        -Logicos: &&, ||, !
+    
+    6-. Flujo estructurado:
+        -Evita el uso de goto y promueve las secuencias y decisiones y bucles
+
+2. Creencias de los profesionales: ¿Qué características particulares del lenguaje se cree que sean "mejores" que en otros lenguajes?
+
+    1-. Facilidad y rapidez para prototipar:
+        -Se cree que JavaScript permite escribir programas y pruebas rapidamente sin compilar, ideal para desarrollo web 
+    
+    2-. Flexibilidad de tipos:
+        -El tipado dinamico permite manipular variables sin declararlas estrictamente como C o Java
+        -Los profesionales lo consideran util para scripts rapidos, auque requiere cuidado para evitar errores
+    
+    3-. Integracion con navegadores y web:
+        -Es el unico lenguaje nativo del navegador, lo que lo hace la mejor opcion para aplicaciones web interactivas sin tener que depender de plugins, lo que hace un lenguaje de los más populares hoy en día
+    
+    4-. Funciones como bloques reutilizables:
+        -Las funciones son faciles de definir y pasar como parametros, lo que fomenta un estilo estructurado modular
+
+Considera el lenguaje JavaScript acotado al paradigma de programación estructurada y analízalo en términos de los ejes propuestos para la elección de un lenguaje de programación (@¿Cómo elegir un lenguaje? ) y responde:
+
+1. ¿Tiene una sintaxis y una semántica bien definida? ¿Existe documentación oficial?
+    -Tiene una sintaxis y semantica bien definida, JavaScript tiene reglas claras para declaraciones, expresionar, estructuras de control y funciones. Aunque es dinamico, su comportamiento esta formalmente especificado
+    -Existe el estandar ECMAScript (ECMA-262), mantenido por Ecma Internacional, ademas de la documentacion practica en MDN Web Docs 
+
+
+2. ¿Es posible comprobar el código producido en ese lenguaje?
+    -Si, es posible comprobar codigo pero la verificacion es principalmente dinamica, donde no es compilado de forma estricta como C o Java, aqui van algunas formas de comprobar codigo:
+        -Una interpretacion directa en el navegador o Node.js, al ejecutarlo se detectan errores de sintaxis o ejecucion
+        -Herramientas de depuracion como las DevTools del navegador o el comando node inspect
+        -Linter y analizadores estaticos, que revisan el estilo y posibles errores antes de ejecutar
+        -Pruebas automatizadas, frameworks como Jest o Mocha permiten comprobar el comportamiento de las funciones
+
+3. ¿Es confiable?
+    -Es conficable mientras se tengan buenas practicas de programacion y entornos controlados, sino por defecto no es tan confiable por que debilmente tipado y dinamico, errores de tipos o valores inesperados pueden aparecer en tiempo de ejecucion.
+
+4. ¿Es ortogonal?
+    -No es ortogonal del todo, es ortogonal en parte muchas construcciones se combinan de forma uniforme, peor no es completamente ortogonal, hay excepciones y comportamientos que no son del todo comunes, como la coercion de tipos, diferencias entre == y ===, o null vs undefined
+
+5. ¿Cuáles son sus características de consistencia y uniformidad?
+    -En JavaScript se puede decir que:
+        -Tiene consistencia en la sintaxis de control, y las funciones mantienen un patron claro de definicion y llamada
+        -Falta de uniformidad en algunos casos, la coercion de tipos puede dar resultados inesperados como mezclar caracteres con numeros o la existencia de null y undefined tiene cierta inconsistencia semantica
+
+6. ¿Es extensible? ¿Hay subconjuntos de ese lenguaje?
+    Es extensible y admite subconjuntos que ajustan su uso para cada tipo de contexto
+    -Si es un lenguaje extensible ya que se pueden agregar funcionalidades mediante librerias y frameworks como React o Express, el propio lenguaje permite extender objetos nativos o crear modulos
+    -Existen el subconjunto seguro de JavaScript que usan los navegadores para evitar el acceso directo al sistema, tambien existen las variantes como TypeScript, que es un superconjunto tipado, y el Strict Mode que restringe ciertas practicas
+
+7. El código producido, ¿es transportable?
+    -Es una de las caracteristicas principales por las que se usa JavaScript, la portabilidad de que cualquier navegador pueda ejecutar los scripts y generar aplicaciones para distintos entornos.
+    
